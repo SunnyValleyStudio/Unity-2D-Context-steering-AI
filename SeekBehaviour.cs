@@ -49,7 +49,7 @@ public class SeekBehaviour : SteeringBehaviour
             return (danger, interest);
         }
 
-        //If we havent yet reached the target do the main logic of finding the interest directions
+        //If we haven't yet reached the target do the main logic of finding the interest directions
         Vector2 directionToTarget = (targetPositionCached - (Vector2)transform.position);
         for (int i = 0; i < interest.Length; i++)
         {
@@ -79,18 +79,15 @@ public class SeekBehaviour : SteeringBehaviour
 
         if (Application.isPlaying && interestsTemp != null)
         {
-            if (interestsTemp != null)
+            Gizmos.color = Color.green;
+            for (int i = 0; i < interestsTemp.Length; i++)
             {
-                Gizmos.color = Color.green;
-                for (int i = 0; i < interestsTemp.Length; i++)
-                {
-                    Gizmos.DrawRay(transform.position, Directions.eightDirections[i] * interestsTemp[i]*2);
-                }
-                if (reachedLastTarget == false)
-                {
-                    Gizmos.color = Color.red;
-                    Gizmos.DrawSphere(targetPositionCached, 0.1f);
-                }
+                Gizmos.DrawRay(transform.position, Directions.eightDirections[i] * interestsTemp[i]*2);
+            }
+            if (reachedLastTarget == false)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(targetPositionCached, 0.1f);
             }
         }
     }

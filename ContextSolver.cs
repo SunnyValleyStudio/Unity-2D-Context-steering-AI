@@ -7,7 +7,7 @@ public class ContextSolver : MonoBehaviour
     [SerializeField]
     private bool showGizmos = true;
 
-    //gozmo parameters
+    //gizmo parameters
     float[] interestGizmo = new float[0];
     Vector2 resultDirection = Vector2.zero;
     private float rayLength = 2;
